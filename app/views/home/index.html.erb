@@ -1,0 +1,55 @@
+
+<div class="home-header">
+	<h1>Domain fighter</h1>
+	<h2>Choose and let Google decide</h2>
+</div>
+
+<div class="domain-container">
+
+	<%= form_tag("/fight", method: "get") do  %>		
+
+		<% @columns.each_with_index do |doms,i| %>
+			
+				<div class="column-domains">
+					<ul class="domain-list">
+						<% doms.each_with_index do |domain,j| %>
+							<li>
+								<%= check_box_tag("domain[]", domain['name'],false,{class:"dom-checkbox",id:"domain_#{i}_#{j}"}) %>
+								<%= label_tag("domain[]", domain['name'],{for:"domain_#{i}_#{j}"}) %>	
+							</li>
+						<% end %>
+					</ul>
+				</div>
+		<% end %>
+
+		<div class="submit-container">	
+			<%= submit_tag("Fight!",class:"btn btn-success btn-lg fight-btn",disabled:"disabled")  %>
+			<span class="info-txt">Select at least 2</span>
+		</div>
+
+	<% end %>
+</div>
+
+
+
+
+<script type="text/javascript">
+	function checkDomsQty(){
+		var domQty = $(".dom-checkbox:checked").length;
+
+		if(domQty>1){
+			$(".fight-btn").removeAttr("disabled")
+			$(".info-txt").hide();
+		} else {
+			$(".fight-btn").attr("disabled","disabled")
+			$(".info-txt").show();
+		}
+	}
+
+
+	$(".dom-checkbox").change(function() {
+		checkDomsQty();
+	});
+
+	checkDomsQty();
+</script>

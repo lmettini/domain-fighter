@@ -1,0 +1,17 @@
+
+<div class="home-header">
+	<h1>Domain fighter</h1>
+	<h2>And the winner is ...</h2>
+</div>
+
+
+<ul class="result-list">
+	<% @fighters.each do |dom| %>
+		<li class="<%= dom['domain']==@winner['domain'] ? 'winner' : 'looser' %>" >			
+			Domain <strong><%= dom['domain'] %></strong> has <%= dom['strength'] %> results
+		</li>
+	<% end %>
+
+</ul>
+
+	

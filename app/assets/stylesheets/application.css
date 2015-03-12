@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+.column-domains{
+	float: left;
+	width: 300px;
+}
+
+.domain-list li{
+	list-style: none;
+  padding: 5px;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding-top: 10px;
+  margin-bottom: 4px;
+}
+
+.domain-list li > label, input {
+	margin-left: 5px;
+}
+
+.submit-container{
+	 padding-left: 15px;
+  float: left;
+  padding-top: 5px;
+}
+
+.home-header{
+	margin-bottom: 30px;
+  padding-left: 25px;
+}
+
+.home-header h2{
+	font-size: 15pt;
+}
+
+.fight-btn{
+	display: block;
+  margin-bottom: 5px;
+}
+
+.info-txt{
+	margin-left: 5px;
+  color: #777;
+}
+
+.result-list li{
+	color: #fff;
+	list-style: none;
+	width: 400px;
+  height: 40px;
+  padding-left: 10px !important;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.result-list li strong{
+	font-size: 13pt;
+}
+
+.result-list li.winner{
+	background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.result-list li.looser{
+	background-color: #c9302c;
+  border-color: #ac2925;
+}
